@@ -372,6 +372,28 @@ if __name__ == "__main__":
     # 删除多余的 '股票代码' 列
     df_merged = df_merged.drop(columns=['股票代码', 'Name', 'Code', 'Date'])
 
+    df_merged = df_merged.round({
+    "pb": 4, # 市净率
+    "board_pb": 4, # 行业市净率
+    "pb_ratio": 4, # 个股行业市净率比
+    "pe": 4, # 市盈率
+    "board_pe": 4, # 行业市盈率
+    "pe_ratio": 4, # 个股行业市盈率比
+    "latest_price": 2, # 最新价格
+    "market_cap": 2, # 市值
+    "board_latest_price": 2, # 行业最新价格
+    "board_market_cap": 2, # 行业市值
+    "yahoo目标均价": 2,
+    "yahoo目标最高价": 2,
+    "yahoo目标最低价": 2,
+    "当前价格": 2,
+    "yahoo预测上涨/下跌空间(%)": 2,
+    "融资买入额": 2,
+    "融券卖出额": 2,
+    "VIX指数": 2,
+    "CNN恐慌与贪婪指数": 2,
+    })
+
     # 打印最终合并后的数据框
     print("\n最终合并后的数据（前5行）：")
     print(df_merged.head())
@@ -383,4 +405,5 @@ if __name__ == "__main__":
     index=False, encoding='utf-8-sig')
 
     print(f"\n数据已成功保存至 '{output_file_name}'。")
+
 
