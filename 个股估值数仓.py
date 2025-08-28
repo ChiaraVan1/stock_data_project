@@ -377,6 +377,7 @@ if __name__ == "__main__":
     print(df_merged.head())
     
     # 5. 保存到新的CSV文件
-    output_file_name = r'D:\python\monitoringmodeling\估值数据.csv'
+    output_file_name = '估值数据.csv'
     df_merged.to_csv(output_file_name, index=False, encoding='utf-8-sig')
+
     print(f"\n数据已成功保存至 '{output_file_name}'。")
